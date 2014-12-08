@@ -10,8 +10,17 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        url: 'http://yourawesomewebsite.azurewebsites.net/',
-        mail: {},
+        url: 'http://jzaratan.azurewebsites.net/',
+          mail: {
+            transport: 'SMTP',
+            options: {
+                service: 'Mailgun',
+                auth: {
+                    user: 'postmaster@sandboxe00d3b8f8a614f2c9120c2e87117db65.mailgun.org',
+                    pass: 'c574bc44b66f19b539a68a1febcf4fe5'
+                }
+            }
+        },
         database: {
             client: 'sqlite3',
             connection: {
